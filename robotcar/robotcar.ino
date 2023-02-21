@@ -1,38 +1,42 @@
 // Motors
-# define IN1 4  // motors - right fd
-# define IN2 5  // motors - right bw
-# define IN3 6  // motors - left fd
-# define IN4 7  // motors - left bw
+# define IN1 2  // motors - right fd
+# define IN2 3  // motors - right bw
+# define IN3 4  // motors - left fd
+# define IN4 5  // motors - left bw
 
 // Sensors
 
 //IR sensor array
-# define IN1 4  
-# define IN2 5
-# define IN3 6
-# define IN4 7
-# define IN1 4
-# define IN2 5
+# define IR1 A0  
+# define IR2 A1
+# define IR3 A2
+# define IR4 A3
+# define IR5 A4
+# define IR6 A5
 
 //Front IR sensors
-# define IN3 6
-# define IN4 7
+# define IR7 A6
+# define IR8 A7
+
+//Side IR sensors
+# define IR9 A8  // left
+# define IR10 A9  // right
 
 //Front Ultrasonic sensor
-# define IN3 6  // echo
-# define IN4 7  // trigger
+# define US1 6  // echo
+# define US2 22  // trigger
 
 //Left Ultrasonic sensors
-# define IN3 6  // front-echo
-# define IN4 7  // front-trigger
-# define IN3 6  // back-echo
-# define IN4 7  // back-trigger
+# define US3 7  // front-echo
+# define US4 24  // front-trigger
+# define US5 8  // back-echo
+# define US6 26  // back-trigger
 
 //Right Ultrasonic sensors
-# define IN3 6  // front-echo
-# define IN4 7  // front-trigger
-# define IN3 6  // back-echo
-# define IN4 7  // back-trigger
+# define US7 9  // front-echo
+# define US8 28  // front-trigger
+# define US9 10  // back-echo
+# define US10 30  // back-trigger
 
   bool startstatus = 0;
   bool mazestatus = 0;
