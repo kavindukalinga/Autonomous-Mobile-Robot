@@ -7,20 +7,20 @@
 // Sensors
 
 //IR sensor array
-# define IR1 A0  
-# define IR2 A1
-# define IR3 A2
-# define IR4 A3
-# define IR5 A4
-# define IR6 A5
+int IR1; //A0 
+int IR2; //A1
+int IR3; //A2
+int IR4; //A3
+int IR5; //A4
+int IR6; //A5
 
 //Front IR sensors
-# define IR7 A6
-# define IR8 A7
+int IR7; //A6
+int IR8; //A7
 
 //Side IR sensors
-# define IR9 A8  // left
-# define IR10 A9  // right
+int IR9; //A8  // left
+int IR10; //A9  // right
 
 //Front Ultrasonic sensor
 # define US1 6  // echo
@@ -141,4 +141,51 @@ void finish() {
   delay(1000);
   finishstatus=1;
   Serial.println("Finish finished");
+}
+
+void IRsensorarray() {
+  int  sense0 = analogRead(A0);
+  int  sense1 = analogRead(A1);
+  int  sense2 = analogRead(A2);
+  int  sense3 = analogRead(A3);
+  int  sense4 = analogRead(A4);
+  int  sense5 = analogRead(A5);
+  
+  if(sense0>500) IR1=1;
+  else IR1=0;
+  
+  if(sense1>250) IR2=1;
+  else IR2=0;
+
+  if(sense2<700) IR3=1;
+  else IR3=0;
+
+  if(sense3<700) IR4=1;
+  else IR4=0;
+
+  if(sense4>500) IR5=1;
+  else IR5=0;
+
+  if(sense5>400) IR6=1;
+  else IR6=0;
+
+  
+  Serial.print(IR1);
+  Serial.print(" ");
+      
+  Serial.print(IR2);
+  Serial.print(" ");
+      
+  Serial.print(IR3);
+  Serial.print(" ");
+  
+  Serial.print(IR4);
+  Serial.print(" ");
+
+  Serial.print(IR5);
+  Serial.print(" ");
+  
+  Serial.println(IR6);
+  delay(100);
+  
 }
