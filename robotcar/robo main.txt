@@ -1,0 +1,21 @@
+// Start
+  if ( (startstatus==0) && (mazestatus==0) && (wallstatus ==0) && (boxstatus==0) && (linestatus==0) && (finishstatus==0) ) start();
+
+  // Maze Solving
+  if ( (startstatus==1) && (mazestatus==0) && (wallstatus ==0) && (boxstatus==0) && (linestatus==0) && (finishstatus==0) ) maze();
+  
+  // Wall following
+  if ( (startstatus==1) && (mazestatus==1) && (wallstatus ==0) && (boxstatus==0) && (linestatus==0) && (finishstatus==0) ) wall();
+
+  // Blind Box
+  if ( (startstatus==1) && (mazestatus==1) && (wallstatus ==1) && (boxstatus==0) && (linestatus==0) && (finishstatus==0) ) box();
+
+  // Line Following
+  if ( (startstatus==1) && (mazestatus==1) && (wallstatus ==1) && (boxstatus==1) && (linestatus==0) && (finishstatus==0) ) line();
+
+  // Finish
+  if ( (startstatus==1) && (mazestatus==1) && (wallstatus ==1) && (boxstatus==1) && (linestatus==1) && (finishstatus==0) ) finish();
+
+  if ( (startstatus==1) && (mazestatus==1) && (wallstatus ==1) && (boxstatus==1) && (linestatus==1) && (finishstatus==1) ) {
+      Serial.println("Robot X is finished");
+      delay(100000);
